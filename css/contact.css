@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Contact Page Styles */
+body {
+  font-family: 'Cormorant Garamond', serif;
+  color: #111;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background-color: #0d0d0d;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* logo | nav | icons */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    transform: translateX(-25px); /* ← Adjust this value */
+
+}
+
+  .nav-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+.logo img {
+  height: 85px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    list-style: none;
+    gap: 2rem;
+}
+  
+
+.nav-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  padding: 8px;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.4);
+  transform: scaleX(0);
+  opacity: 0.75;
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:not(.active):hover {
+  opacity: 0.75;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+  background-color: white;
+}
+
+.nav-links a.active {
+  font-weight: 700;
+}
+
+.nav-links a.active:hover {
+  opacity: 0.75;
+}
+
+.nav-icons a {
+  color: white;
+  margin-left: 1.2rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.nav-icons a:hover {
+  opacity: 0.75;
+}
+
+
+.typewriter-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 30vh;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .typewriter-line1 {
+    font-weight: 500;
+    font-size: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    border-right: 2px solid white;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  .typewriter-line2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease 0.3s, transform 1.5s ease 0.3s;
+  }
+  
+  .typewriter-line2.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+
+/* Contact Layout */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  gap: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.contact-info .social-icons {
+  margin-top: 1.5rem;
+}
+
+.contact-info .social-icons a {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #111;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.contact-info .social-icons a:hover {
+  opacity: 0.7;
+}
+
+form {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: #111;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 0;
+  width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: #111;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #1b1b1b;
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+.name-fields {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.name-fields .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+form button {
+  background-color: #0033cc;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: start;
+}
+
+form button:hover {
+  background-color: #001f99;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.contact-email {
+  color: #111;
+  text-decoration: none;
+  transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.field-note {
+  display: block;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.aircraft-service-fields,
+.email-phone-fields {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.aircraft-service-fields .form-group,
+.email-phone-fields .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.contact-button {
+  background-color: transparent;
+  color: #111;
+  border: 2px solid #111;
+  padding: 0.75rem 2rem;
+  font-size: 1.15rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
+  border-radius: 0;
+  letter-spacing: 0.3px;
+}
+
+.contact-button:hover {
+  background-color: #111;
+  color: #e6e6e6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+a i {
+  text-decoration: none;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contact-footer {
+  background-color: #111111;
+  color: white;
+  padding: 2rem;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-contact p {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0.3rem 0;
+}
+
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.footer-address p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0.2rem 0;
+}
+
+.footer-logo {
+  height: 150px;
+  opacity: 0.1;
+  position: absolute;
+  right: 5rem;
+  bottom: 1.7rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.4;
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Video Section for Transparent Navbar */
+.video-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  padding-top: 30vh;
+  font-family: 'Cormorant Garamond', serif;
+}

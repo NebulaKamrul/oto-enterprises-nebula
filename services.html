@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - OTO Enterprises</title>
+  
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-m..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header class="video-header">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="videos/service.mp4" type="video/mp4" />
+    </video>
+
+    <div class="overlay"></div>
+
+    <nav class="navbar" id="navbar">
+      <div class="navbar-content">
+        <div class="logo">
+          <a href="index.html"><img src="photos/otologowhite.png" alt="Logo" class="logo-img" /></a>
+        </div>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html"class="active">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="contact.html" class="quote-btn">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-text">
+      <div class="overlay-content">
+        <div class="typewriter-lines">
+          <h1 class="typewriter-line1 typing" data-text="You Set the Pace, We Detail the Space."></h1>
+          <p class="typewriter-line2" data-text="We don’t follow industry standards. We redefine them."></p>
+        </div>
+    </header>
+
+        <!-- Services Section -->
+    <section class="content fade-in-on-scroll services-section">
+      <h2 class="section-title">Aircraft Interior Detailing</h2>
+      <p class="intro-text">
+        Our mobile team brings luxury-grade interior care to your aircraft, wherever you are. 
+        From jets to helicopters, every detail is handled with precision and care.
+      </p>
+
+      <div class="slider-wrapper">
+        <button class="slider-arrow left" onclick="moveSlide(-1)">&#10094;</button>
+    
+        <div class="slider" id="serviceSlider">
+          <div class="slide active">
+            <div class="luxury-card">
+              <div class="luxury-text">
+                <h3>Full Cabin Cleaning</h3>
+                <p>Restore freshness, cleanliness, and visual polish across all surfaces.</p>
+                <p class="full-text">This includes touchpoint sanitation, upholstery misting, UV-safe surface polishing, and cabin fragrance reset — optimized for jets, props, and executive helicopters.</p>
+                <a href="#" class="read-more-link">Read more</a>
+              </div>
+              <div class="luxury-image hover-overlay">
+                <img src="photos/cabin.jpg" alt="Cabin cleaning">
+                <div class="image-overlay">
+                  <div class="overlay-content">
+                    <p class="price-range">From $249</p>
+                    <a href="contact.html" class="get-service-btn">Get This Service</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="slide">
+            <div class="luxury-card">
+              <div class="luxury-text">
+                <h3>Leather Conditioning</h3>
+                <p>Preserve and revive your leather with industry-grade products and gentle care.</p>
+                <p class="full-text">Includes full-grain leather rehydration, color-safe conditioning creams, and anti-crack protection.</p>
+                <a href="#" class="read-more-link">Read more</a>
+              </div>
+              <div class="luxury-image hover-overlay">
+                <img src="photos/leather.jpg" alt="Leather conditioning">
+                <div class="image-overlay">
+                  <div class="overlay-content">
+                    <p class="price-range">From $179</p>
+                    <a href="contact.html" class="get-service-btn">Get This Service</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="slide">
+            <div class="luxury-card">
+              <div class="luxury-text">
+                <h3>Carpet & Upholstery Shampoo</h3>
+                <p>Remove odors, stains, and embedded dust with fabric-safe techniques.</p>
+                <p class="full-text">We use dry-foam, low-moisture, and eco-friendly solutions tailored to aviation-grade textiles.</p>
+                <a href="#" class="read-more-link">Read more</a>
+              </div>
+              <div class="luxury-image hover-overlay">
+                <img src="photos/upholstery.jpg" alt="Upholstery shampooing">
+                <div class="image-overlay">
+                  <div class="overlay-content">
+                    <p class="price-range">From $199</p>
+                    <a href="contact.html" class="get-service-btn">Get This Service</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="slide">
+            <div class="luxury-card">
+              <div class="luxury-text">
+                <h3>Odor Elimination</h3>
+                <p>Advanced odor treatments using non-toxic, aviation-safe disinfectants.</p>
+                <p class="full-text">We eliminate smoke, mildew, fuel, and food odors using ozone-neutralizers and EPA-compliant products.</p>
+                <a href="#" class="read-more-link">Read more</a>
+              </div>
+              <div class="luxury-image hover-overlay">
+                <img src="photos/odor.jpg" alt="Odor elimination">
+                <div class="image-overlay">
+                  <div class="overlay-content">
+                    <p class="price-range">From $169</p>
+                    <a href="contact.html" class="get-service-btn">Get This Service</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="slide">
+            <div class="luxury-card">
+              <div class="luxury-text">
+                <h3>Cockpit Detailing</h3>
+                <p>Specialized cockpit care to keep instruments clean and flight-ready.</p>
+                <p class="full-text">Includes antistatic screen wipes, switch-safe brushing, and non-corrosive dashboard polishing to preserve avionics.</p>
+                <a href="#" class="read-more-link">Read more</a>
+              </div>
+              <div class="luxury-image hover-overlay">
+                <img src="photos/cockpit.jpg" alt="Cockpit detailing">
+                <div class="image-overlay">
+                  <div class="overlay-content">
+                    <p class="price-range">From $189</p>
+                    <a href="contact.html" class="get-service-btn">Get This Service</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+
+        
+    
+        <button class="slider-arrow right" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </section>
+
+        <!-- BEFORE AND AFTER SLIDER -->
+
+        <section class="comparison-section fade-in-on-scroll">
+          <h2 class="comparison-title">See the Difference OTO Makes in Every Cabin</h2>
+          <p class="comparison-tagline">With OTO on deck, your aircraft's aura will always stay in check.</p>
+        
+          <div class="comparison-row">
+            <!-- Slider 1 -->
+            <div class="comparison-wrapper">
+              <img src="photos/cabinafter.png" alt="Clean cabin" class="comparison-img after-img" />
+              <img src="photos/cabinbefore.png" alt="Dirty cabin" class="comparison-img before-img" />
+              <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
+            </div>
+        
+            <!-- Slider 2 -->
+            <div class="comparison-wrapper">
+              <img src="photos/cockpitafter.png" alt="Clean cockpit" class="comparison-img after-img" />
+              <img src="photos/cockpitbefore.png" alt="Dirty cockpit" class="comparison-img before-img" />
+              <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
+            </div>
+          </div>
+        </section>
+        
+    <!-- FAQ !-->    
+    <section class="faq-section fade-in-on-scroll">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+    
+        <div class="faq-item">
+          <input type="checkbox" id="q1">
+          <label for="q1" class="faq-question">What services does OTO offer?</label>
+          <div class="faq-answer">OTO offers aircraft interior detailing, leather conditioning, odor elimination, cockpit cleaning, and more. All optimized for jets, props, and helicopters.</div>
+        </div>
+    
+        <div class="faq-item">
+          <input type="checkbox" id="q2">
+          <label for="q2" class="faq-question">Where is OTO located?</label>
+          <div class="faq-answer">We're proudly based in Ontario, Canada, offering mobile detailing services across the GTA and surrounding airports.</div>
+        </div>
+    
+        <div class="faq-item">
+          <input type="checkbox" id="q3">
+          <label for="q3" class="faq-question">How long does a full cabin clean take?</label>
+          <div class="faq-answer">On average, 2–4 hours depending on the aircraft size and the level of detailing required.</div>
+        </div>
+    
+        <div class="faq-item">
+          <input type="checkbox" id="q4">
+          <label for="q4" class="faq-question">Are your products aviation-safe?</label>
+          <div class="faq-answer">Yes. We exclusively use aviation-safe, non-corrosive, and eco-friendly products compliant with industry standards.</div>
+        </div>
+    
+        <div class="faq-item">
+          <input type="checkbox" id="q5">
+          <label for="q5" class="faq-question">How do I book a service?</label>
+          <div class="faq-answer">Simply head to our <a href="contact.html">Contact</a> page and send us a request. Our team will follow up within 24 hours.</div>
+        </div>
+    
+      </div>
+    </section>
+       
+    
+    
+    <!-- CTA BANNER -->
+    <section class="cta-video fade-in-on-scroll">
+      <video autoplay muted loop playsinline class="background-video-cta">
+        <source src="videos/ac.mp4" type="video/mp4" />
+      </video>
+    
+      <div class="video-overlay-cta"></div>
+    
+      <div class="cta-text">
+        <h2></h2>
+        <p></p>
+        <a href="contact.html" class="btn">Request a Quote</a>
+      </div>
+    </section>
+    
+
+    <!-- Footer (with scroll fade effect) -->
+    <footer class="contact-footer fade-in-on-scroll">
+      <div class="footer-content">
+        <h2 class="footer-title">OTO Enterprises Inc. <br></h2>
+
+        <div class="footer-contact">
+          <p><a href="mailto:info@otoenterprise.com">info@otoenterprise.com</a></p>
+          <p>(905) 718-4005 <br></p>
+        </div>
+
+        <div class="footer-address">
+          <p><br>Oshawa Executive Airport [CYOO]</p>
+          <p>Aviator Ln, Oshawa, ON</p>
+          <p>L1J 8P5</p>
+        </div>
+
+        <div class="footer-logo-container">
+          <img src="photos/otologowhite.png" alt="OTO Logo" class="footer-logo">
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/scrollfade.js"></script>
+    <script src="/js/typewritercontact.js"></script>
+    <script src="/js/nigganavbar.js"></script>
+    
+      <!-- what happens when i hit read more !-->
+    <script>
+      document.querySelectorAll('.read-more-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const content = this.previousElementSibling;
+          content.style.display = 'block';
+          this.style.display = 'none';
+        });
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- SLIDING ANIMATION !-->
+    <script>
+      const slider = document.getElementById("serviceSlider");
+      const slides = slider.querySelectorAll(".slide");
+      const totalSlides = slides.length;
+      let currentSlide = 0;
+    
+      function updateSlidePosition() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+    
+      document.querySelector(".slider-arrow.right").addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+      });
+    
+      document.querySelector(".slider-arrow.left").addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      });
+    </script>
+
+    <!-- SLIDING BEFORE AND AFTER ANIMATION !-->
+    <script>
+      document.querySelectorAll('.comparison-wrapper').forEach(wrapper => {
+        const afterImg = wrapper.querySelector('.after-img');
+        const handle = wrapper.querySelector('.slider-handle');
+    
+        wrapper.addEventListener('mousemove', (e) => {
+          const rect = wrapper.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    
+          afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+          handle.style.left = `${percent}%`;
+        });
+      });
+    </script>
+  </body>
+    
+  <script>
+    const ctaObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const line1 = entry.target.querySelector("h2");
+          const line2 = entry.target.querySelector("p");
+  
+          const text1 = "Luxury Isn't Optional, It's OTO.";
+          const text2 = "From $249. Mobile service. Trusted by pilots across Ontario.";
+  
+          line1.textContent = "";
+          line2.textContent = "";
+          line2.classList.remove("show");
+  
+          let index = 0;
+  
+          function typeTitle() {
+            if (index < text1.length) {
+              line1.textContent += text1.charAt(index);
+              index++;
+              setTimeout(typeTitle, 70);
+            } else {
+              setTimeout(() => {
+                line2.textContent = text2;
+                line2.classList.add("show");
+              }, 400);
+            }
+          }
+  
+          typeTitle();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+  
+    const ctaSection = document.querySelector(".cta-text");
+    if (ctaSection) {
+      ctaObserver.observe(ctaSection);
+    }
+  </script>
+</body>
+</html>

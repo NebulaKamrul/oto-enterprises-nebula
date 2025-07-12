@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - OTO Enterprises</title>
+  
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-m..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+
+    <header class="video-header">
+        <video autoplay muted loop playsinline class="background-video">
+          <source src="videos/sky.mp4" type="video/mp4" />
+        </video>
+      
+        <div class="overlay"></div>
+      
+        <nav class="navbar" id="navbar">
+          <div class="navbar-content">
+            <div class="logo">
+              <a href="index.html"><img src="photos/otologowhite.png" alt="Logo" class="logo-img" /></a>
+            </div>
+      
+            <div class="nav-right">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+      
+              <div class="nav-cta">
+                <a href="contact.html" class="quote-btn">Request a Quote</a>
+              </div>
+
+            </div>
+          </div>
+        </nav>
+
+        <div class="hero-text">
+        <div class="overlay-content">
+        <div class="typewriter-lines">
+            <h1 class="typewriter-line1 typing" data-text="For Those Who Fly Different."></h1>
+            <p class="typewriter-line2" data-text="Request a quote. Ask a question. We’re ready when you are."></p>
+
+          </div>
+          
+      </header>
+      
+
+  <!-- Contact Form Section -->
+  <div class="contact-page fade-in-on-scroll" style="background-image: url('videos/contact.mp4');">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h1>Contact Us</h1>
+        <p>We invite you to reach out with any questions.</p>
+        <p>Whether you have a question, are curious about our services, or simply want to explore your options, leave your details below. Our founders will personally reach out to guide you with care, clarity, and genuine attention.</p>
+        <p><a href="mailto:info@otoenterprise.com" class="contact-email">info@otoenterprise.com </a> <br>(905) 718-4005
+        <p>Keep in touch with the Originals:</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/otoenterprises" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/oto-enterprises-inc/" target="_blank">
+            <i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-row">
+            <div class="name-fields">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="first-name">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="last-name">
+                </div>
+              </div>
+              
+        </div>
+
+        <div class="form-group">
+          <label>Company Name <span class="optional field-note">Optional</span></label>
+          <input type="text" />
+        </div>
+
+        <div class="email-phone-fields">
+            <div class="form-group">
+              <label for="email">Email* <span class="required field-note">Required</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone<span class="optional field-note">Optional</span></label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+        </div>
+          
+        <div class="form-group">
+          <label>Aircraft Registration <span class="optional field-note">Optional</span></label>
+          <input type="text" />
+        </div>
+
+        <div class="aircraft-service-fields">
+            <div class="form-group">
+              <label for="aircraft-type">Aircraft Type* <span class ="required field-note"> Required </span></label>
+                <select>
+                        <option>Select an option</option>
+                        <option>A: Single Engine Propeller (e.g., Cessna 172, Piper Archer)</option>
+                        <option>B: Twin Engine Propeller (e.g., Beechcraft Baron, Piper Seneca)</option>
+                        <option>C: Cirrus Propeller (e.g., Cirrus SR20, SR22)</option>
+                        <option>D: Turboprop (e.g., King Air 350, Pilatus PC-12)</option>
+                        <option>E: Cirrus Jet (e.g., Cirrus Vision Jet SF50)</option>
+                        <option>F: Very Light Jet (e.g., HondaJet, Eclipse 500)</option>
+                        <option>G: Light Jet (e.g., Citation CJ3, Phenom 300)</option>
+                        <option>H: Midsize Jet (e.g., Learjet 60, Hawker 800XP)</option>
+                        <option>I: Super Midsize Jet (e.g., Citation X, Challenger 350)</option>
+                        <option>J: Large Jet (e.g., Gulfstream G450, Falcon 2000)</option>
+                        <option>K: Ultra-Long-Range Jet (e.g., Gulfstream G650, Global 7500)</option>
+                        <option>L: Airliner / Executive Airliner (e.g., Boeing BBJ, Airbus ACJ)</option>
+                        <option>M: Small Chopper (e.g., Robinson R44)</option>
+                        <option>N: Medium Chopper (e.g., Bell 407, Airbus H135)</option>
+                        <option>O: Large Chopper (e.g., Sikorsky S-76, AW139)</option>
+                        <option>P: VIP Helicopter (e.g., H160 VIP, Sikorsky S-92)</option>
+                        <option>Q: Military Aircraft (e.g., C-130 Hercules, F-16)</option>
+                        <option>R: Experimental / Kit Aircraft (e.g., Van’s RV-10)</option>
+                        <option>S: UAV / Drone (e.g., DJI Mavic, MQ-9 Reaper)</option>
+                        <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="service">Service <span class ="optional field-note"> Optional </span></label>
+              <select> 
+                <option>Select an option</option>
+                      <option>Essential Interior</option>
+                      <option>Full Detailing</option>
+                      <option>Exterior Only</option>
+              </select>
+            </div>
+          </div>
+          
+
+        <div class="form-group">
+            <label>Aircraft Location* <span class="required field-note">Required</span></label>
+            <input type="text" required placeholder="ICAO or Airport Name" />
+          </div>
+
+        <div class="form-group">
+          <label>Message* <span class="required field-note">Required</span></label>
+          <textarea required placeholder="Ask a question, request a booking, or leave a note."></textarea>
+        </div>
+
+        <button class="contact-button">Request Contact</button>
+
+      </form>
+    </div>
+  </div>
+
+    <!-- Footer (with scroll fade effect) -->
+    <footer class="contact-footer fade-in-on-scroll">
+        <div class="footer-content">
+          
+          <!-- Part 1: Title -->
+          <h2 class="footer-title">OTO Enterprises Inc. <br></h2>
+          
+          <!-- Part 2: Contact Info -->
+          <div class="footer-contact">
+            <p><a href="mailto:info@otoenterprise.com">info@otoenterprise.com</a></p>
+            <p>(905) 718-4005 <br></p>
+          </div>
+          
+          <!-- Part 3: Address -->
+          <div class="footer-address">
+            <p><br>Oshawa Executive Airport [CYOO]</p>
+            <p>Aviator Ln, Oshawa, ON</p>
+            <p>L1J 8P5</p>
+          </div>
+
+          <div class="footer-logo-container">
+            <img src="photos/otologowhite.png" alt="OTO Logo" class="footer-logo">
+          </div>
+        
+        
+        </div>
+      </footer>
+      
+      
+    <script src="/js/scrollfade.js"></script>
+    <script src="/js/typewritercontact.js"></script>
+    <script src="/js/nigganavbar.js"></script>
+    
+      
+
+</body>
+
+
+
+</html>

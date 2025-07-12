@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    color: #333;
+}
+
+header {
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../images/hero-placeholder.jpg') center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    background: #111;
+    color: #eee;
+    text-align: center;
+    padding: 2rem;
+}
+
+.video-header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* adjust opacity if needed */
+    z-index: 1;
+}
+
+
+.overlay-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 4rem;
+}
+
+.overlay-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; /* changes main header font size*/
+    font-weight: 450;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.overlay-content p {
+    font-size: 1.6rem;
+    font-weight: 100;
+  }
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 1200px;           /* Limit the width */
+  margin: 0 auto;              /* Center the navbar */
+  padding: 1.5rem 2rem;        /* Space inside */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* spacing between icons */
+  }  
+
+.nav-links {
+  list-style: none;         /* Removes the bullets */
+  display: flex;            /* Makes the links horizontal */
+  gap: 2rem;                /* Optional spacing between links */
+  margin: 0;
+  margin-left: -4rem; 
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* distance below text */
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.4); /* white with 40% opacity */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }  
+
+  .nav-links a.active {
+    opacity: 1;
+    font-weight: 600;
+  }
+  
+  .nav-links a.active::after {
+    transform: scaleX(1);
+    background-color: white;
+    opacity: 1;
+  }
+
+
+  
+  
+.nav-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: white !important;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .nav-icons svg:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+  
+
+.nav-icons .icon:hover,
+.nav-links a:hover {
+    opacity: 0.75;
+}
+
+/* Fade-in*/
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply animation to hero text */
+  .overlay-content h1,
+  .overlay-content p {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  /* Stagger effect: p fades in after h1 */
+  .overlay-content p {
+    animation-delay: 0.2s;
+  }
+  
+  .cta-video {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* darkens whole video */
+    z-index: 2;
+  }
+  
+  .cta-text {
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+  }
+  
+  .cta-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-text .btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-text .btn:hover {
+    background: white;
+    color: black;
+  }
+
+  .team-section {
+    padding: 4rem 2rem;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 280px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-8px);
+  }
+  
+  .team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.3rem;
+  }
+  
+  .role {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  
+  .fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .typewriter-wrapper {
+    text-align: center;
+    color: white;
+  }
+  
+  .typewriter-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .typewriter-line1,
+  .typewriter-line2 {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+  }  
+  
+  /* Second line styling */
+  .typewriter-line2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 1.2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease 0.3s, transform 1.5s ease 0.3s;
+  }
+  
+  .typewriter-line2.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  .typing {
+    border-right: 2px solid white;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .logo-img {
+    height: 85px; /* Adjust size as needed */
+    width: auto;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .logo-img {
+      height: 30px;
+    }
+  }
+  
+
+  
+
+  
+  
+
+  
