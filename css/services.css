@@ -159,7 +159,7 @@ body {
   cursor: pointer;
 }
 
-/* Hero Text */
+
 .typewriter-lines {
   display: flex;
   flex-direction: column;
@@ -199,6 +199,8 @@ body {
   from, to { border-color: transparent; }
   50% { border-color: white; }
 }
+
+
 
 /* Hero Video */
 .video-header {

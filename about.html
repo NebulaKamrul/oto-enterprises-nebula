@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us - OTO Enterprises</title>
 
+  <link rel="stylesheet" href="css/services.css" />
   <link rel="stylesheet" href="css/about.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,79 +47,99 @@
     </div>
   </header>
 
-  <!-- ABOUT: Meet the Originals Section -->
-  <section class="about-team-section fade-in-on-scroll">
-    <h2 class="section-heading">Meet the Originals.</h2>
-    <p class="section-subheading">Where every detail begins.</p>
+  <section class="bio-section fade-in-on-scroll">
+    <div class="bio-container">
+      <img src="photos/shazzy.jpg" alt="Shazzy" class="bio-image left">
+      <div class="bio-text right">
+        <h2>Shazzy Ahmad</h2>
+        <h4 class="title" style="color: #5991e7;"><em>Founder</em></h4>
 
-    <div class="team-horizontal">
-      <!-- Member Template -->
-      <div class="team-card circle-style" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
-        <div class="team-photo-wrapper">
-          <img src="photos/nebula.jpg" alt="Nebula" class="team-circle-img" />
-          <div class="circle-overlay">
-            <i class="fas fa-arrow-right arrow-icon"></i>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Nebula Kamrul</h3>
-          <p class="role">Chief Technology Officer</p>
-        </div>
-      </div>
-      <div class="team-card circle-style" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
-        <div class="team-photo-wrapper">
-          <img src="photos/nebula.jpg" alt="Shazzy" class="team-circle-img" />
-          <div class="circle-overlay">
-            <i class="fas fa-arrow-right arrow-icon"></i>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Shazzy Ahmad</h3>
-          <p class="role">Founder and President</p>
-        </div>
-      </div>
-      <div class="team-card circle-style" onmouseover="this.classList.add('hovered')" onmouseout="this.classList.remove('hovered')">
-        <div class="team-photo-wrapper">
-          <img src="photos/nebula.jpg" alt="Abrar" class="team-circle-img" />
-          <div class="circle-overlay">
-            <i class="fas fa-arrow-right arrow-icon"></i>
-          </div>
-        </div>
-        <div class="team-info">
-          <h3>Abrar Hossain</h3>
-          <p class="role">Chief Executive Officer</p>
-        </div>
+        <p>
+          I started OTO because I saw gaps in the industry that deserved more attention, more care, and a higher standard.
+          But more than that, I wanted to build something that reflected who I am: focused, driven, and deeply committed to
+          doing things the right way. For me, this company isn’t just business, it’s personal. I’m here to bring a higher
+          standard to the aviation services industry. At OTO, we don’t just offer services… we offer peace of mind.
+        </p>
+        <p>
+          My journey hasn’t been traditional, but it’s been intentional. I’ve worked from the ground up, solving problems,
+          earning trust, and learning the kind of leadership you don’t get from textbooks. I believe in accountability,
+          in excellence, and in building something lasting.
+        </p>
+        <p>
+          OTO is part of that legacy. But at the core of everything I do is one simple principle: <br>
+
+          <strong><em style="font-size: 1.5rem; color: #555;">If we’re going to do it, we’re going to do it right.</em></strong>
+
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Modal Template -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-bio"></div>
-      <a id="linkedin-link" href="https://www.linkedin.com/in/nebulakamrul" target="_blank" class="linkedin-btn">
-        <i class="fab fa-linkedin"></i> View LinkedIn
-      </a>
+  <section class="bio-section fade-in-on-scroll">
+    <div class="bio-container reverse">
+      <img src="photos/abrar.jpeg" alt="Abrar" class="bio-image right">
+      <div class="bio-text left">
+        <h2>Abrar Hossain</h2>
+        <h4 class="title" style="color: #5991e7;"><em>Chief Executive Officer</em></h4>
+
+        <p>
+          Aviation is where I discovered true purpose. A field where precision is paramount, pressure is relentless,
+          and excellence is non-negotiable. I’ve operated across some of Canada’s most demanding airport environments,
+          from leading ramp operations to orchestrating complex service executions, with postings spanning from
+          Toronto Pearson to Iqaluit International.
+        </p>
+        <p>
+          I chose to join OTO because the vision Shazzy shared with me was unmistakably clear and aligned with my own values.
+          Here, precision isn’t a goal. It’s the foundation.
+        </p>
+        <p>
+          At OTO, I take pride in helping lead an enterprise where standards aren’t merely upheld, they’re elevated.
+          Whether overseeing operations or empowering the team, I bring the same spirit: composed, prepared, and fully engaged.
+          Because when clients entrust us with their aircraft, the expectation is nothing short of excellence.
+        </p>
+        <strong><em style="font-size: 1.5rem; color: #555;">And that is why every detail matters.</em></strong>
+
+      </div>
     </div>
-  </div>
+  </section>
 
-<script>
-  const bios = {
-    shazzy: `<h2>Shazzy</h2><p>Shazzy's bio...</p>`,
-    abrar: `<h2>Abrar</h2><p>Abrar's bio...</p>`,
-    nebula: `<h2>Nebula</h2><p>CTO and creative code whisperer... [truncated for brevity]</p>`
-  };
+  <section class="bio-section fade-in-on-scroll">
+    <div class="bio-container">
+      <img src="photos/nebula.jpg" alt="Nebula" class="bio-image left">
+      <div class="bio-text right">
+        <h2>Nebula Kamrul</h2>
+        <h4 class="title" style="color: #5991e7;"><em>Chief Technology Officer</em></h4>
 
-  function openModal(name) {
-    document.getElementById('modal-bio').innerHTML = bios[name];
-    document.getElementById('modal').classList.remove('hidden');
-  }
+        <p>
+          OTO started the way many meaningful things do. In parking lots after long shifts, between classes, 
+          and during the kind of conversations you don’t forget. We weren’t just dreaming. We were designing. 
+          Naming. Vision-building. and I was refining the essence; what it should feel like, look like, and live like,
+          long before launch.
+        </p>
+        
+        <p>
+          From the very beginning, I knew OTO had to feel different. Quietly luxurious. Built with clarity, purpose, 
+          and presence. My role is to shape that. How we show up online, how our brand speaks without saying a word, 
+          how our details (and detailing) leave an impression long after the first click.
+        </p>
+        
+        <p>
+          I craft the tone, the visuals, and the feeling you get when you see us for the first time. 
+          Not just aesthetics, but experience. My design choices echo how we operate: with care, with conviction, and 
+          with nothing out of place.
+        </p>
+        
+        <p><strong><em style="font-size: 1.5rem; color: #555;">
+          Because at OTO, Detailing may be our craft, but detail is our commitment.
+        </em></strong></p>
+        
 
-  function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-  }
-</script>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
 
 <footer class="contact-footer fade-in-on-scroll">
   <div class="footer-content">
