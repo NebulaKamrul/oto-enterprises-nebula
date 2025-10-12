@@ -1,7 +1,6 @@
 
 /* --- OTO Enterprises: Luxury Homepage Section Styling --- */
 
-/* Base Reset (Optional, helps with consistency) */
 section {
   padding: 4rem 8vw;
   background-color: #f8f8f8;
@@ -24,18 +23,7 @@ p {
   color: #3a3a3a;
 }
 
-/* --- Highlight Strip --- */
-.highlight-item {
-  background-color: #121212;
-  color: #f5f5f5;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 1rem 0;
-  text-align: center;
-  font-size: 0.95rem;
-  border-bottom: 1px solid #2b2b2b;
-}
+
 
 /* --- Why Choose OTO --- */
 .why-oto {
@@ -53,15 +41,137 @@ p {
 }
 
 /* --- Testimonials --- */
-.testimonials blockquote {
-  font-size: 1.2rem;
+.testimonials-section {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.testimonials-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scroll-padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.testimonial-card {
+  flex: 0 0 calc(100% / 3 - 1.5rem); /* 3 cards per screen with spacing */
+  max-width: calc(100% / 3 - 1.5rem);
+  min-height: 380px; /* MAKE IT TALLER */
+  background: white;
+  border-radius: 2px;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: start;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.testimonial-text {
+  font-size: 2rem;
   font-style: italic;
-  margin: 2rem auto;
-  max-width: 700px;
+  color: #444;
+  margin-bottom: 1rem;
   border-left: 4px solid #5991e7;
   padding-left: 1rem;
-  color: #444;
 }
+
+.testimonial-author {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.testimonials-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.testimonials-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 1rem 3rem;
+  scroll-behavior: smooth;
+  scroll-padding: 1rem;
+  animation: auto-scroll 60s linear infinite;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials-carousel:hover {
+  animation-play-state: paused;
+}
+
+
+@keyframes auto-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.arrow.left {
+  left: 0.5rem;
+}
+
+.arrow.right {
+  right: 0.5rem;
+}
+
+.arrow:hover {
+  background-color: #eee;
+}
+
+
 
 /* --- Aircraft Types --- */
 .aircraft-types ul {

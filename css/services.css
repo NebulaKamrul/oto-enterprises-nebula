@@ -368,7 +368,7 @@ body {
 }
 
 .slider-arrow:hover {
-  background: #cba135;
+  background: #5991e7;
   color: white;
   transform: translateY(-50%) scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -469,7 +469,7 @@ body {
   margin-top: 1rem;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #cba135;
+  color: #5991e7;
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.3s;
@@ -570,7 +570,7 @@ body {
 }
 
 .slider-handle:hover {
-  background: #cba135;
+  background: #5991e7;
   color: white;
 }
 
@@ -633,6 +633,7 @@ body {
 
 .faq-question::after {
   content: '+';
+  color:#5991e7;
   position: absolute;
   right: 0;
   top: 0.75rem;

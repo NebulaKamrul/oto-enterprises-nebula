@@ -47,37 +47,121 @@
   
 
 <!-- Luxury Highlights Strip -->
-<div class="highlight-item fade-in-on-scroll">Mobile Hangar Crew</div>
-<div class="highlight-item fade-in-on-scroll">On-Demand Scheduling</div>
+<section class="luxury-strip-container">
+  <div class="luxury-strip-track">
+    <div class="highlight-item">Mobile Hangar Crew</div>
+    <div class="highlight-item">On-Demand Scheduling</div>
+    <div class="highlight-item">Seasonal Detail Adaptations</div>
+    <div class="highlight-item">Aviation Detailing Excellence</div>
+    <div class="highlight-item">Founder-Led Consultations</div>
+    <div class="highlight-item">Interior Detailing with Fragrance Matching</div>
+    <!-- Repeat,, seamless loop -->
+    <div class="highlight-item">Mobile Hangar Crew</div>
+    <div class="highlight-item">On-Demand Scheduling</div>
+    <div class="highlight-item">Seasonal Detail Adaptations</div>
+    <div class="highlight-item">Aviation Detailing Excellence</div>
+    <div class="highlight-item">Founder-Led Consultations</div>
+    <div class="highlight-item">Interior Detailing with Fragrance Matching</div>
+  </div>
 </section>
 
+<style>
+/* Luxury Highlights Styling css */
+.luxury-strip-container {
+  overflow: hidden;
+  width: 100%;
+  background: #0f0f0f;
+  border-top: 1px solid #0f0f0f;
+  border-bottom: 1px solid #0f0f0f;
+  text-transform: uppercase;
+  padding: 0.8rem 0;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+}
 
-<!-- Why OTO -->
+.luxury-strip-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-strip 30s linear infinite;
+}
+
+.highlight-item {
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0 2.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* Scrolling animation */
+@keyframes scroll-strip {
+  100% {
+    transform: translateX(0%);
+  }
+  0% {
+    transform: translateX(-50%);
+  }
+}
+
+/* fade gradients */
+.luxury-strip-container::before,
+.luxury-strip-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.luxury-strip-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.luxury-strip-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f, transparent);
+}
+</style>
+
+
+
+<!-- opening statement -->
 <section class="why-oto fade-in-on-scroll">
-<h2>Why Choose OTO?</h2>
+<h2><strong>What you fly isn’t standard.</strong></h2>
 <p style="font-size: 1.5rem; line-height: 1.9; text-align: center;">
-  <strong>At OTO Enterprises, we don't just detail, we elevate.</strong> <br> Whether you're a jetsetter, a charter operator, or a proud aircraft owner, our team treats your aircraft like it's our own. With precision tools, trained eyes, and luxury-grade products, we restore brilliance where others overlook it.
+  <strong>Neither is how we care for it.</strong> <br> Your aircraft tells a story, we ensure it speaks in luxury. 
+  With precision tools, trained eyes, and aerospace-standard products, every detail is handled with intention. Our work isn’t rushed, 
+  it’s refined. Because your aircraft deserves more than a clean; it deserves to be <strong>remembered</strong>, not just maintained.
+  
 </p>
 </section>
 
 
+
 <!-- Before/After -->
 <section class="before-after fade-in-on-scroll">
-  <h2>Transformation in Flight</h2>
-  <p><em>Before. After. Elevated. Aircraft detailing, redefined.</em></p>
+  <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-align: center; font-weight: 600;">
+    Transformation in Flight
+  </h2>
+  <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; text-align: center; margin-top: 1.5rem;"><strong>Before. After. Elevated. Aircraft detailing, redefined.</strong></p>
+
 
   <div class="comparison-row">
     <!-- Slider 1 -->
     <div class="comparison-wrapper">
-      <img src="photos/cabinafter.png" alt="Clean cabin" class="comparison-img after-img" />
       <img src="photos/cabinbefore.png" alt="Dirty cabin" class="comparison-img before-img" />
+      <img src="photos/cabinafter.png" alt="Clean cabin" class="comparison-img after-img" />
       <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
     </div>
 
     <!-- Slider 2 -->
     <div class="comparison-wrapper">
-      <img src="photos/cockpitafter.png" alt="Clean cockpit" class="comparison-img after-img" />
-      <img src="photos/cockpitbefore.png" alt="Dirty cockpit" class="comparison-img before-img" />
+      <img src="photos/seatbefore.png" alt="Dirty cockpit" class="comparison-img before-img" />
+      <img src="photos/seatafter.png" alt="Clean cockpit" class="comparison-img after-img" />
       <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
     </div>
   </div>
@@ -118,13 +202,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: clip-path 0.3s ease;
     pointer-events: none;
-  }
-
-  .after-img {
-    clip-path: inset(0 0 0 50%);
-    z-index: 2;
   }
 
   .before-img {
@@ -132,15 +210,15 @@
   }
 
   .after-img {
-  clip-path: inset(0 50% 0 0); /* initial view */
+  clip-path: inset(0 0 0 50%); /* initial view */
   z-index: 2;
 }
 
 .slider-handle {
   position: absolute;
   top: 50%;
-  left: 50%; /* <- this MUST match the .after-img 50% */
-  transform: translate(-50%, -50%);
+  left: 50%;
+  transform: translate(-50%, -50%); /* critical for centering */
   z-index: 3;
   width: 42px;
   height: 42px;
@@ -176,50 +254,102 @@
 <!-- SLIDING ANIMATION !-->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const wrappers = document.querySelectorAll('.comparison-wrapper');
-  
-    wrappers.forEach(wrapper => {
-      const afterImg = wrapper.querySelector('.after-img');
-      const handle = wrapper.querySelector('.slider-handle');
-  
-      // Set default 50% position on load
-      afterImg.style.clipPath = `inset(0 50% 0 0)`;
+  const wrappers = document.querySelectorAll('.comparison-wrapper');
+
+  wrappers.forEach(wrapper => {
+    const afterImg = wrapper.querySelector('.after-img');
+    const handle = wrapper.querySelector('.slider-handle');
+
+    const updateSlider = (x) => {
+      const rect = wrapper.getBoundingClientRect();
+      const offsetX = x - rect.left;
+      const percent = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
+
+      afterImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
+      handle.style.left = `${percent}%`;
+    };
+
+    wrapper.addEventListener('mousemove', (e) => {
+      updateSlider(e.clientX);
+    });
+
+    wrapper.addEventListener('touchmove', (e) => {
+      updateSlider(e.touches[0].clientX);
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+      afterImg.style.clipPath = `inset(0 0 0 50%)`;
       handle.style.left = `50%`;
-  
-      wrapper.addEventListener('mousemove', (e) => {
-        const rect = wrapper.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
-  
-        afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-        handle.style.left = `${percent}%`;
-      });
-  
-      wrapper.addEventListener('mouseleave', () => {
-        // Reset to 50% view on exit
-        afterImg.style.clipPath = `inset(0 50% 0 0)`;
-        handle.style.left = `50%`;
-      });
     });
   });
-  </script>
+});
+
+</script>
+
   
   
-
-
-
-
-
 <!-- Testimonials -->
-<section class="testimonials fade-in-on-scroll">
-<h2>Client Testimonials</h2>
-<blockquote>
-“Flew into CYOO for a last-minute meeting—left with a plane shinier than it arrived. OTO’s team is elite.” – A. Sabri, G550 Owner
-</blockquote>
-<blockquote>
-“Not just cleaned, but cared for. They treated my aircraft like art.” – Capt. L. Nguyen, Citation Latitude
-</blockquote>
+<section id="testimonials" class="testimonials-section fade-in-on-scroll" style="padding: 4rem 0;">
+  <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-align: center; font-weight: 600; margin-bottom: 2rem;">
+    Client Testimonials
+  </h2>
+
+  <div class="testimonials-carousel-wrapper">
+    <button class="arrow left">&#8592;</button>
+  
+    <div class="testimonials-carousel" id="testimonialTrack">
+      <!-- Testimonials -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Flew into CYOO for a last-minute meeting, left with a plane shinier than it arrived. OTO’s team is elite.”</p>
+        <p class="testimonial-author">– A. Sabri, <em>G550 Owner</em></p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Not just cleaned, but cared for. They treated my aircraft like art.”</p>
+        <p class="testimonial-author">– Capt. L. Nguyen, <em>Citation Latitude</em></p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“Honestly, I’ve never seen my Cessna sparkle like this. Even my wife noticed the difference!”</p>
+        <p class="testimonial-author">– M. Al-Rashid, <em>Cessna 182 Pilot</em></p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“From scheduling to finish, everything was seamless. Attention to detail was next-level.”</p>
+        <p class="testimonial-author">– J. Singh, <em>Phenom 300 Captain</em></p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“I trust OTO before any flight. Their work gives me peace of mind, and pride in my aircraft.”</p>
+        <p class="testimonial-author">– K. Fernandez, <em>Citation CJ4 Owner</em></p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">“The best interior detailing crew I’ve worked with in North America. Period.”</p>
+        <p class="testimonial-author">– D. Fox, <em>Hawker 800XP Owner</em></p>
+      </div>
+    </div>
+  
+    <button class="arrow right">&#8594;</button>
+  </div>
+  
 </section>
+
+<script>
+  const carousel = document.getElementById('testimonialTrack');
+  const leftArrow = document.querySelector('.arrow.left');
+  const rightArrow = document.querySelector('.arrow.right');
+
+  const cardWidth = carousel.querySelector('.testimonial-card').offsetWidth + 32; // 32px = gap
+
+  leftArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  });
+
+  rightArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  });
+</script>
+
+
+
+
+
 
 
 <!-- Aircraft Types -->
