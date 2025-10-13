@@ -2,7 +2,7 @@
 
 Welcome to the official codebase for **OTO Enterprises**, a premium aviation service brand offering luxury aircraft detailing, sanitization, odor removal, and interior restoration across Ontario, Canada.
 
-This repository contains the front-end code (HTML, CSS, JS) for the official OTO website – designed to evoke **quiet luxury**, trust, and professional excellence.
+This repository contains the front-end code (HTML, CSS, JS) for the official OTO website, designed to evoke **quiet luxury**, trust, and professional excellence.
 
 ---
 
