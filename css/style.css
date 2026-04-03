@@ -1,6 +1,28 @@
 
 /* --- OTO Enterprises: Luxury Homepage Section Styling --- */
 
+/* Page Load Fade In */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body {
+  animation: pageFadeIn 0.6s ease-in-out;
+}
+
+/* Fade In On Scroll */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 section {
   padding: 4rem 8vw;
   background-color: #f8f8f8;
@@ -21,6 +43,66 @@ p {
   margin: 0 auto;
   text-align: center;
   color: #3a3a3a;
+}
+
+
+
+/* --- Luxury Highlights Strip --- */
+.luxury-strip-container {
+  overflow: hidden;
+  width: 100%;
+  background: #0f0f0f;
+  border-top: 1px solid #0f0f0f;
+  border-bottom: 1px solid #0f0f0f;
+  text-transform: uppercase;
+  padding: 0.8rem 0;
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.luxury-strip-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-strip 30s linear infinite;
+}
+
+.highlight-item {
+  color: #f5f5f5;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0 2.5rem;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scroll-strip {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.luxury-strip-container::before,
+.luxury-strip-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.luxury-strip-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.luxury-strip-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f, transparent);
 }
 
 
@@ -300,71 +382,405 @@ p {
   transform: translateY(0);
 }
 
-
-.contact-footer {
-  background-color: #111111 !important;
-  color: white !important;
-  padding: 2rem !important;
-  position: relative !important;
-  margin-bottom: 9px !important;
-  width: 100% !important;
+/* ===== STATS COUNTER ===== */
+.stats-section {
+  background-color: #111;
+  padding: 4rem 8vw;
 }
 
-.footer-content {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  padding-left: 1.5rem !important;
-  text-align: center !important;
-  position: relative !important;
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.footer-title {
-  font-size: 1.8rem !important;
-  font-weight: 500 !important;
-  margin-bottom: 1rem !important;
+.stat-item {
+  flex: 1 1 200px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
 }
 
-.footer-contact p {
-  color: white !important;
-  font-size: 1.2rem !important;
-  font-weight: 500 !important;
-  margin: 0.3rem 0 !important;
+.stat-item:last-child {
+  border-right: none;
 }
 
-.footer-contact a {
-  color: white !important;
-  text-decoration: none !important;
+.stat-number-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 3px;
 }
 
-.footer-contact a:hover {
-  text-decoration: underline !important;
-  opacity: 0.8 !important;
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: white;
+  line-height: 1;
 }
 
-.footer-address p {
-  font-size: 1rem !important;
-  font-weight: 300 !important;
-  line-height: 1.6 !important;
-  margin: 0.2rem 0 !important;
-  color: white !important;
+.stat-suffix {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  color: #5991e7;
+  font-weight: 400;
 }
 
-.footer-logo {
-  height: 150px !important;
-  opacity: 0.1 !important;
-  position: absolute !important;
-  right: 5rem !important;
-  bottom: 1.7rem !important;
-  transition: opacity 0.3s ease !important;
-}
-
-.footer-logo:hover {
-  opacity: 0.4 !important;
+.stat-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.6rem;
+  text-align: center;
+  max-width: none;
 }
 
 
+/* ===== MANIFESTO ===== */
+.manifesto-section {
+  background-color: #0a0a0a;
+  padding: 7rem 8vw;
+  text-align: center;
+}
+
+.manifesto-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.55;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+.manifesto-text em {
+  color: #5991e7;
+  font-style: italic;
+}
+
+.manifesto-text strong em {
+  font-weight: 700;
+}
+
+.manifesto-line2 {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.manifesto-line2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.manifesto-cursor {
+  display: inline-block;
+  color: #5991e7;
+  font-weight: 300;
+  animation: blink-cursor 0.75s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink-cursor {
+  from, to { opacity: 1; }
+  50%       { opacity: 0; }
+}
 
 
+/* ===== HOW IT WORKS ===== */
+.process-section {
+  background-color: #fff;
+  padding: 5rem 8vw;
+}
+
+.process-section h2 {
+  margin-bottom: 3.5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.process-step {
+  text-align: left;
+  padding-top: 1.5rem;
+  border-top: 2px solid #111;
+}
+
+.step-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #ddd;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.process-step h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #111;
+}
+
+.process-step p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.7;
+  text-align: left;
+  max-width: none;
+  margin: 0;
+}
+
+
+/* ===== AIRCRAFT CARDS ===== */
+.aircraft-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2.5rem auto 0;
+}
+
+.aircraft-card {
+  background: #111;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.aircraft-card:hover {
+  transform: translateY(-5px);
+}
+
+.aircraft-type {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: white;
+  display: block;
+}
+
+.aircraft-examples {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block;
+}
+
+
+/* ===== PRICING CARDS ===== */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: white;
+  border: 1px solid #e4e4e4;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.pricing-card.featured {
+  background: #111;
+  border-color: #111;
+}
+
+.pricing-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111;
+  margin: 0;
+}
+
+.pricing-card.featured h3 {
+  color: white;
+}
+
+.pricing-card p {
+  font-size: 0.95rem;
+  color: #888;
+  text-align: left;
+  max-width: none;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.pricing-card.featured p {
+  color: rgba(255,255,255,0.55);
+}
+
+.featured-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #5991e7;
+  display: block;
+}
+
+.price-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #111;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.pricing-card.featured .price-tag {
+  color: white;
+}
+
+.pricing-btn {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: 1.5px solid #111;
+  color: #111;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.pricing-card.featured .pricing-btn {
+  border-color: white;
+  color: white;
+}
+
+.pricing-btn:hover {
+  background: #111;
+  color: white;
+}
+
+.pricing-card.featured .pricing-btn:hover {
+  background: white;
+  color: #111;
+}
+
+
+/* ===== MOBILE RESPONSIVE (HOME) ===== */
+
+@media (max-width: 768px) {
+  section {
+    padding: 2.5rem 5vw;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .why-oto p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .testimonial-text {
+    font-size: 1.3rem;
+  }
+
+  .testimonial-author {
+    font-size: 1rem;
+  }
+
+  .testimonial-card {
+    min-height: auto;
+  }
+
+  .cta-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-text p {
+    font-size: 1rem;
+  }
+
+  .stat-item {
+    flex: 1 1 40%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-number {
+    font-size: 3.2rem;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .aircraft-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .comparison-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-steps,
+  .aircraft-grid,
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    flex: 1 1 100%;
+  }
+
+  .manifesto-text {
+    font-size: 1.7rem;
+  }
+}
 
 
 

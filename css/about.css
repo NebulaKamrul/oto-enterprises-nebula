@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 /* About Page Styles */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 body {
   font-family: 'Cormorant Garamond', serif;
   color: #111;
   background-color: #f9f9f9;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -355,70 +359,18 @@ body {
   }
 }
 
-.contact-footer {
-  background-color: #111111;
-  color: white;
-  padding: 2rem;
-  position: relative;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-left: 1.5rem;
-}
-
-.footer-title {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.footer-contact p {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 0.3rem 0;
-}
-
-.footer-contact a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-contact a:hover {
-  text-decoration: underline;
-  opacity: 0.8;
-}
-
-.footer-address p {
-  font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.6;
-  margin: 0.2rem 0;
-}
-
-.footer-logo {
-  height: 150px;
-  opacity: 0.1;
-  position: absolute;
-  right: 5rem;
-  bottom: 1.7rem;
-  transition: opacity 0.3s ease;
-}
-
-.footer-logo:hover {
-  opacity: 0.4;
-}
 
 .fade-in-on-scroll {
   opacity: 0;
+  visibility: hidden;            /* hides it without collapsing space */
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in-on-scroll.visible {
   opacity: 1;
+  visibility: visible;           /* reveal when JS adds .visible */
   transform: translateY(0);
 }
+
+

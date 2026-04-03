@@ -7,6 +7,7 @@
   
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/contact.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -33,6 +34,11 @@
             <a href="/contact/" class="quote-btn">Request a Quote</a>
           </div>
         </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       </div>
     </nav>
     
@@ -66,67 +72,6 @@
   </div>
 </section>
 
-<style>
-/* Luxury Highlights Styling css */
-.luxury-strip-container {
-  overflow: hidden;
-  width: 100%;
-  background: #0f0f0f;
-  border-top: 1px solid #0f0f0f;
-  border-bottom: 1px solid #0f0f0f;
-  text-transform: uppercase;
-  padding: 0.8rem 0;
-  position: relative;
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.luxury-strip-track {
-  display: flex;
-  width: fit-content;
-  animation: scroll-strip 30s linear infinite;
-}
-
-.highlight-item {
-  color: #f5f5f5;
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding: 0 2.5rem;
-  white-space: nowrap;
-  letter-spacing: 0.5px;
-}
-
-/* Scrolling animation */
-@keyframes scroll-strip {
-  100% {
-    transform: translateX(0%);
-  }
-  0% {
-    transform: translateX(-50%);
-  }
-}
-
-/* fade gradients */
-.luxury-strip-container::before,
-.luxury-strip-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.luxury-strip-container::before {
-  left: 0;
-  background: linear-gradient(to right, #0f0f0f, transparent);
-}
-
-.luxury-strip-container::after {
-  right: 0;
-  background: linear-gradient(to left, #0f0f0f, transparent);
-}
-</style>
 
 
 
@@ -168,137 +113,70 @@
   </div>
 </section>
 
-<!-- STYLE (move to style.css ideally) -->
-<style>
-  .comparison-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  }
 
-  .comparison-row {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-  }
-
-  .comparison-wrapper {
-    position: relative;
-    max-width: 48%;
-    flex: 1 1 45%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 1px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-    cursor: ew-resize;
-  }
-
-  .comparison-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    pointer-events: none;
-  }
-
-  .before-img {
-    z-index: 1;
-  }
-
-  .after-img {
-  clip-path: inset(0 0 0 50%); /* initial view */
-  z-index: 2;
-}
-
-.slider-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* critical for centering */
-  z-index: 3;
-  width: 42px;
-  height: 42px;
-  background: #f9f9f9;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
-  cursor: grab;
-}
-
-
-  .slider-handle:hover {
-    background: #5991e7;
-    color: white;
-  }
-
-  .slider-handle .chevron {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #111;
-  }
-
-  @media screen and (max-width: 900px) {
-    .comparison-wrapper {
-      max-width: 100%;
-    }
-  }
-</style>
-
-<!-- SLIDING ANIMATION !-->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const wrappers = document.querySelectorAll('.comparison-wrapper');
-
-  wrappers.forEach(wrapper => {
-    const afterImg = wrapper.querySelector('.after-img');
-    const handle = wrapper.querySelector('.slider-handle');
-
-    const updateSlider = (x) => {
-      const rect = wrapper.getBoundingClientRect();
-      const offsetX = x - rect.left;
-      const percent = Math.max(0, Math.min(100, (offsetX / rect.width) * 100));
-
-      afterImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
-      handle.style.left = `${percent}%`;
-    };
-
-    wrapper.addEventListener('mousemove', (e) => {
-      updateSlider(e.clientX);
-    });
-
-    wrapper.addEventListener('touchmove', (e) => {
-      updateSlider(e.touches[0].clientX);
-    });
-
-    wrapper.addEventListener('mouseleave', () => {
-      afterImg.style.clipPath = `inset(0 0 0 50%)`;
-      handle.style.left = `50%`;
-    });
-  });
-});
-
-</script>
 
   
   
-<!-- Testimonials -->
-<section id="testimonials" class="testimonials-section fade-in-on-scroll" style="padding: 4rem 0;">
-  <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-align: center; font-weight: 600; margin-bottom: 2rem;">
-    Client Testimonials
-  </h2>
+<!-- Stats Counter -->
+<section class="stats-section fade-in-on-scroll">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number-wrap"><span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span></div>
+      <p class="stat-label">Aircraft Serviced</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number-wrap"><span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span></div>
+      <p class="stat-label">Aviation-Safe Products</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number-wrap"><span class="stat-number" data-target="3">0</span></div>
+      <p class="stat-label">Aviation Professionals</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number-wrap"><span class="stat-number" data-target="24">0</span><span class="stat-suffix">h</span></div>
+      <p class="stat-label">On-Call Response</p>
+    </div>
+  </div>
+</section>
 
-  <div class="testimonials-carousel-wrapper">
-    <button class="arrow left">&#8592;</button>
-  
-    <div class="testimonials-carousel" id="testimonialTrack">
+
+<!-- Manifesto -->
+<section class="manifesto-section fade-in-on-scroll">
+  <p class="manifesto-text">Your aircraft deserves more than maintenance.<br>It deserves a <em>standard.</em></p>
+</section>
+
+
+<!-- How It Works -->
+<section class="process-section fade-in-on-scroll">
+  <h2>How It Works</h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <span class="step-number">01</span>
+      <h3>Request a Quote</h3>
+      <p>Fill out our contact form or call us directly. We respond within hours, not days.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-number">02</span>
+      <h3>We Come to You</h3>
+      <p>Our mobile crew meets you at your hangar, tarmac, or private ramp — wherever you're based.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-number">03</span>
+      <h3>Precision Detailing</h3>
+      <p>Aerospace-standard products. Trained eyes. Zero shortcuts. Every surface handled with intent.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-number">04</span>
+      <h3>You Fly Clean</h3>
+      <p>Board an aircraft that looks, smells, and feels like new. Every single time.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS REMOVED — replaced by stats/manifesto/process above -->
+<section id="testimonials" class="testimonials-section fade-in-on-scroll" style="display:none;">
+  <div class="testimonials-carousel" id="testimonialTrack">
       <!-- Testimonials -->
       <div class="testimonial-card">
         <p class="testimonial-text">“Flew into CYOO for a last-minute meeting, left with a plane shinier than it arrived. OTO’s team is elite.”</p>
@@ -331,21 +209,6 @@
   
 </section>
 
-<script>
-  const carousel = document.getElementById('testimonialTrack');
-  const leftArrow = document.querySelector('.arrow.left');
-  const rightArrow = document.querySelector('.arrow.right');
-
-  const cardWidth = carousel.querySelector('.testimonial-card').offsetWidth + 32; // 32px = gap
-
-  leftArrow.addEventListener('click', () => {
-    carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-  });
-
-  rightArrow.addEventListener('click', () => {
-    carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-  });
-</script>
 
 
 
@@ -355,26 +218,59 @@
 
 <!-- Aircraft Types -->
 <section class="aircraft-types fade-in-on-scroll">
-<h2>Aircraft We Service</h2>
-<ul>
-<li>Light Jets (Phenom, CitationJet)</li>
-<li>Mid-Size Jets (Hawker, Learjet)</li>
-<li>Heavy Jets (Challenger, Gulfstream, Global)</li>
-<li>Turbo-Props & Charter Planes</li>
-</ul>
+  <h2>Aircraft We Service</h2>
+  <div class="aircraft-grid">
+    <div class="aircraft-card">
+      <span class="aircraft-type">Light Jets</span>
+      <span class="aircraft-examples">Phenom · CitationJet</span>
+    </div>
+    <div class="aircraft-card">
+      <span class="aircraft-type">Mid-Size Jets</span>
+      <span class="aircraft-examples">Hawker · Learjet</span>
+    </div>
+    <div class="aircraft-card">
+      <span class="aircraft-type">Heavy Jets</span>
+      <span class="aircraft-examples">Challenger · Gulfstream · Global</span>
+    </div>
+    <div class="aircraft-card">
+      <span class="aircraft-type">Turbo-Props</span>
+      <span class="aircraft-examples">King Air · Pilatus · Charter</span>
+    </div>
+  </div>
 </section>
 
 
-<!-- Pricing Table -->
+<!-- Service Packages -->
 <section class="pricing fade-in-on-scroll">
-<h2>Service Packages</h2>
-<table>
-<tr><th>Package</th><th>Description</th><th>Starting From</th></tr>
-<tr><td>Essential Wipe-Down</td><td>Interior quick clean & cockpit dusting</td><td>$299</td></tr>
-<tr><td>Luxury Refresh</td><td>Cabin detailing + leather conditioning</td><td>$649</td></tr>
-<tr><td>Full Exterior Polish</td><td>Decon wash, polish, tire shine</td><td>$899</td></tr>
-<tr><td>The OTO Signature</td><td>All-inclusive in & out detailing</td><td>$1,499</td></tr>
-</table>
+  <h2>Service Packages</h2>
+  <p style="font-style: italic; margin-bottom: 3rem;">Every package is a starting point. We tailor to your aircraft.</p>
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Essential Wipe-Down</h3>
+      <p>Interior quick clean &amp; cockpit dusting</p>
+      <span class="price-tag">From $299</span>
+      <a href="/contact/" class="pricing-btn">Book Now</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Luxury Refresh</h3>
+      <p>Cabin detailing + leather conditioning</p>
+      <span class="price-tag">From $649</span>
+      <a href="/contact/" class="pricing-btn">Book Now</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Full Exterior Polish</h3>
+      <p>Decon wash, polish, tire shine</p>
+      <span class="price-tag">From $899</span>
+      <a href="/contact/" class="pricing-btn">Book Now</a>
+    </div>
+    <div class="pricing-card featured">
+      <span class="featured-label">Most Complete</span>
+      <h3>The OTO Signature</h3>
+      <p>All-inclusive in &amp; out detailing</p>
+      <span class="price-tag">From $1,499</span>
+      <a href="/contact/" class="pricing-btn">Book Now</a>
+    </div>
+  </div>
 </section>
 
 
@@ -397,69 +293,25 @@
   <div class="cta-text">
     <h2></h2>
     <p></p>
-    <a href="contact.html" class="btn">Request a Quote</a>
+    <a href="/contact/" class="btn">Request a Quote</a>
   </div>
 
-  <script>
-    const ctaObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const line1 = entry.target.querySelector("h2");
-          const line2 = entry.target.querySelector("p");
-
-          const text1 = "Book Your Aircraft Detailing";
-          const text2 = "Precision. Care. Mobility. Get started today with a quick quote.";
-          line2.textContent = text2;
-          line2.style.color = "white";  
-          line2.classList.add("show");
-
-
-          line1.textContent = "";
-          line2.textContent = "";
-          line2.classList.remove("show");
-
-          let index = 0;
-
-          function typeTitle() {
-            if (index < text1.length) {
-              line1.textContent += text1.charAt(index);
-              index++;
-              setTimeout(typeTitle, 70);
-            } else {
-              setTimeout(() => {
-                line2.textContent = text2;
-                line2.classList.add("show");
-              }, 400);
-            }
-          }
-
-          typeTitle();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.6 });
-
-    const ctaSection = document.querySelector(".cta-text");
-    if (ctaSection) {
-      ctaObserver.observe(ctaSection);
-    }
-  </script>
 </section>
 
   
   
   
-<footer class="contact-footer">
+<footer class="contact-footer fade-in-on-scroll">
   <div class="footer-content">
-    <h2 class="footer-title">OTO Enterprises Inc.</h2>
+    <h2 class="footer-title">OTO Enterprises Inc. <br></h2>
 
     <div class="footer-contact">
       <p><a href="mailto:info@otoenterprise.com">info@otoenterprise.com</a></p>
-      <p>(905) 718-4005</p>
+      <p>(905) 718-4005 <br></p>
     </div>
 
     <div class="footer-address">
-      <p>Oshawa Executive Airport [CYOO]</p>
+      <p><br>Oshawa Executive Airport [CYOO]</p>
       <p>Aviator Ln, Oshawa, ON</p>
       <p>L1J 8P5</p>
     </div>
@@ -478,9 +330,13 @@
   
   
 
-  <script src="js/scrollfade.js"></script>
-  <script src="js/typewriter.js"></script>
-  <script src="/js/nigganavbar.js"></script>
+  <script src="/js/scrollfade.js"></script>
+  <script src="/js/typewriter.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/comparison.js"></script>
+  <script src="/js/stats.js"></script>
+  <script src="/js/manifesto.js"></script>
+  <script src="/js/cta.js"></script>
 
 
 </body>
