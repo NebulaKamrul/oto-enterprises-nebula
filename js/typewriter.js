@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       line1.classList.remove("typing");
 
+      // Fade in subheading
       setTimeout(() => {
         line2.textContent = text2;
         line2.classList.add("show");
+
       }, 400);
     }
   }

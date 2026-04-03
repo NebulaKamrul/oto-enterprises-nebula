@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OTO Enterprises</title>
-  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/services.css" />
   <link rel="stylesheet" href="css/contact.css" />
@@ -78,11 +83,10 @@
 <!-- opening statement -->
 <section class="why-oto fade-in-on-scroll">
 <h2><strong>What you fly isn’t standard.</strong></h2>
-<p style="font-size: 1.5rem; line-height: 1.9; text-align: center;">
-  <strong>Neither is how we care for it.</strong> <br> Your aircraft tells a story, we ensure it speaks in luxury. 
-  With precision tools, trained eyes, and aerospace-standard products, every detail is handled with intention. Our work isn’t rushed, 
+<p>
+  <strong>Neither is how we care for it.</strong> <br> Your aircraft tells a story, we ensure it speaks in luxury.
+  With precision tools, trained eyes, and aerospace-standard products, every detail is handled with intention. Our work isn’t rushed,
   it’s refined. Because your aircraft deserves more than a clean; it deserves to be <strong>remembered</strong>, not just maintained.
-  
 </p>
 </section>
 
@@ -90,10 +94,8 @@
 
 <!-- Before/After -->
 <section class="before-after fade-in-on-scroll">
-  <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-align: center; font-weight: 600;">
-    Transformation in Flight
-  </h2>
-  <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; text-align: center; margin-top: 1.5rem;"><strong>Before. After. Elevated. Aircraft detailing, redefined.</strong></p>
+  <h2><strong>Transformation in Flight</strong></h2>
+  <p class="before-after-sub"><strong>Before. After. Elevated.</strong> Aircraft detailing, redefined.</p>
 
 
   <div class="comparison-row">
@@ -142,33 +144,37 @@
 
 <!-- Manifesto -->
 <section class="manifesto-section fade-in-on-scroll">
-  <p class="manifesto-text">Your aircraft deserves more than maintenance.<br>It deserves a <em>standard.</em></p>
+  <p class="manifesto-text">
+    <span class="manifesto-line1-wrap">Your aircraft deserves more than just <span class="manifesto-dim">maintenance.</span></span><br>
+    <span class="manifesto-line2">It deserves a higher <strong><em>standard.</em></strong></span>
+  </p>
 </section>
 
 
 <!-- How It Works -->
 <section class="process-section fade-in-on-scroll">
+  <span class="process-eyebrow"><strong>The Process</strong></span>
   <h2>How It Works</h2>
   <div class="process-steps">
     <div class="process-step">
       <span class="step-number">01</span>
-      <h3>Request a Quote</h3>
+      <h3><strong>Request a Quote</strong></h3>
       <p>Fill out our contact form or call us directly. We respond within hours, not days.</p>
     </div>
     <div class="process-step">
       <span class="step-number">02</span>
-      <h3>We Come to You</h3>
-      <p>Our mobile crew meets you at your hangar, tarmac, or private ramp — wherever you're based.</p>
+      <h3><strong>We Come to You</strong></h3>
+      <p>We come to you. <br>Hangar, tarmac, or private ramp.</p>
     </div>
     <div class="process-step">
       <span class="step-number">03</span>
-      <h3>Precision Detailing</h3>
-      <p>Aerospace-standard products. Trained eyes. Zero shortcuts. Every surface handled with intent.</p>
+      <h3><strong>Precision Detailing</strong></h3>
+      <p>Aerospace-standard products. Trained eyes. Zero shortcuts. <br> Every surface handled with intent.</p>
     </div>
     <div class="process-step">
       <span class="step-number">04</span>
-      <h3>You Fly Clean</h3>
-      <p>Board an aircraft that looks, smells, and feels like new. Every single time.</p>
+      <h3><strong>You Fly Clean</strong></h3>
+      <p>Board an aircraft that looks, smells, <br>and feels brand new. <br> Every single time.</p>
     </div>
   </div>
 </section>
@@ -218,31 +224,96 @@
 
 <!-- Aircraft Types -->
 <section class="aircraft-types fade-in-on-scroll">
-  <h2>Aircraft We Service</h2>
+  <h2><strong>Aircraft We Service</strong></h2>
   <div class="aircraft-grid">
+
+    <!-- Light Jets — narrow body, sharply swept wings, top-down -->
     <div class="aircraft-card">
+      <svg class="aircraft-bg-icon" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fuselage -->
+        <path d="M50 8 C54 12 56 28 56 50 C56 72 54 83 50 90 C46 83 44 72 44 50 C44 28 46 12 50 8Z"/>
+        <!-- Left wing — sharply swept back -->
+        <path d="M44 42 L8 70 L8 74 L44 55Z"/>
+        <!-- Right wing -->
+        <path d="M56 42 L92 70 L92 74 L56 55Z"/>
+        <!-- Left tail fin -->
+        <path d="M44 78 L30 88 L30 91 L44 83Z"/>
+        <!-- Right tail fin -->
+        <path d="M56 78 L70 88 L70 91 L56 83Z"/>
+      </svg>
+      <span class="accent-dot"></span>
       <span class="aircraft-type">Light Jets</span>
       <span class="aircraft-examples">Phenom · CitationJet</span>
     </div>
+
+    <!-- Mid-Size Jets — medium body, moderate sweep, wider span -->
     <div class="aircraft-card">
+      <svg class="aircraft-bg-icon" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fuselage -->
+        <path d="M50 7 C55 11 58 28 58 50 C58 72 55 83 50 90 C45 83 42 72 42 50 C42 28 45 11 50 7Z"/>
+        <!-- Left wing -->
+        <path d="M42 38 L5 65 L5 70 L42 53Z"/>
+        <!-- Right wing -->
+        <path d="M58 38 L95 65 L95 70 L58 53Z"/>
+        <!-- Left tail fin -->
+        <path d="M42 77 L26 88 L26 91 L42 82Z"/>
+        <!-- Right tail fin -->
+        <path d="M58 77 L74 88 L74 91 L58 82Z"/>
+      </svg>
+      <span class="accent-dot"></span>
       <span class="aircraft-type">Mid-Size Jets</span>
       <span class="aircraft-examples">Hawker · Learjet</span>
     </div>
+
+    <!-- Heavy Jets — wide body, largest wing span -->
     <div class="aircraft-card">
+      <svg class="aircraft-bg-icon" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <!-- Wide fuselage -->
+        <path d="M50 6 C58 10 63 28 63 50 C63 72 58 83 50 90 C42 83 37 72 37 50 C37 28 42 10 50 6Z"/>
+        <!-- Left wing — full span -->
+        <path d="M37 36 L1 63 L1 69 L37 52Z"/>
+        <!-- Right wing -->
+        <path d="M63 36 L99 63 L99 69 L63 52Z"/>
+        <!-- Left tail fin -->
+        <path d="M37 77 L20 88 L20 91 L37 82Z"/>
+        <!-- Right tail fin -->
+        <path d="M63 77 L80 88 L80 91 L63 82Z"/>
+      </svg>
+      <span class="accent-dot"></span>
       <span class="aircraft-type">Heavy Jets</span>
       <span class="aircraft-examples">Challenger · Gulfstream · Global</span>
     </div>
+
+    <!-- Turbo-Props — rounder/shorter body, straight wings, propeller disc at nose -->
     <div class="aircraft-card">
+      <svg class="aircraft-bg-icon" viewBox="0 0 100 100" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fuselage — slightly shorter, rounder nose -->
+        <path d="M50 15 C56 18 58 32 58 52 C58 72 56 82 50 88 C44 82 42 72 42 52 C42 32 44 18 50 15Z"/>
+        <!-- Propeller blade disc -->
+        <path d="M26 14 C32 11 42 13 50 14 C58 13 68 11 74 14 C68 17 58 15 50 16 C42 15 32 17 26 14Z"/>
+        <!-- Prop hub -->
+        <circle cx="50" cy="15" r="3.5"/>
+        <!-- Left wing — straight, high aspect ratio -->
+        <path d="M42 46 L3 52 L3 58 L42 56Z"/>
+        <!-- Right wing -->
+        <path d="M58 46 L97 52 L97 58 L58 56Z"/>
+        <!-- Left tail fin -->
+        <path d="M42 76 L28 86 L28 89 L42 80Z"/>
+        <!-- Right tail fin -->
+        <path d="M58 76 L72 86 L72 89 L58 80Z"/>
+      </svg>
+      <span class="accent-dot"></span>
       <span class="aircraft-type">Turbo-Props</span>
       <span class="aircraft-examples">King Air · Pilatus · Charter</span>
     </div>
+
   </div>
 </section>
 
 
 <!-- Service Packages -->
 <section class="pricing fade-in-on-scroll">
-  <h2>Service Packages</h2>
+  <h2><strong>Service Packages</strong></h2>
   <p style="font-style: italic; margin-bottom: 3rem;">Every package is a starting point. We tailor to your aircraft.</p>
   <div class="pricing-cards">
     <div class="pricing-card">
@@ -291,8 +362,8 @@
   <div class="video-overlay-cta"></div>
 
   <div class="cta-text">
-    <h2></h2>
-    <p></p>
+    <h2 class="cta-title" data-text="Book Your Aircraft Detailing">Book Your Aircraft Detailing</h2>
+    <p class="cta-sub">Precision. Care. Mobility. Get started today with a quick quote.</p>
     <a href="/contact/" class="btn">Request a Quote</a>
   </div>
 

@@ -1,39 +1,41 @@
+// CTA section: text is pre-loaded in HTML to reserve layout space.
+// JS simply sequences the reveals on scroll — no textContent mutations, no layout shift.
+
 const ctaObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const line1 = entry.target.querySelector("h2");
-      const line2 = entry.target.querySelector("p");
+    if (!entry.isIntersecting) return;
+    observer.unobserve(entry.target);
 
-      const text1 = "Book Your Aircraft Detailing";
-      const text2 = "Precision. Care. Mobility. Get started today with a quick quote.";
+    const title = entry.target.querySelector(".cta-title");
+    const sub   = entry.target.querySelector(".cta-sub");
+    const btn   = entry.target.querySelector(".btn");
 
-      line1.textContent = "";
-      line2.textContent = "";
-      line2.classList.remove("show");
-      line2.style.color = "white";
+    // Stagger: title → sub → button, each a calm beat apart
+    setTimeout(() => {
+      if (title) title.classList.add("show");
+    }, 150);
 
-      let index = 0;
+    setTimeout(() => {
+      if (sub) sub.classList.add("show");
+    }, 650);
 
-      function typeTitle() {
-        if (index < text1.length) {
-          line1.textContent += text1.charAt(index);
-          index++;
-          setTimeout(typeTitle, 70);
-        } else {
-          setTimeout(() => {
-            line2.textContent = text2;
-            line2.classList.add("show");
-          }, 400);
-        }
+    setTimeout(() => {
+      if (btn) {
+        btn.style.transition = "opacity 0.9s ease, transform 0.9s ease";
+        btn.style.opacity    = "1";
+        btn.style.transform  = "translateY(0)";
       }
-
-      typeTitle();
-      observer.unobserve(entry.target);
-    }
+    }, 1100);
   });
-}, { threshold: 0.6 });
+}, { threshold: 0.5 });
 
-const ctaSection = document.querySelector(".cta-text");
+const ctaSection = document.querySelector(".cta-video");
 if (ctaSection) {
+  // Hide button initially so it joins the staggered sequence
+  const btn = ctaSection.querySelector(".btn");
+  if (btn) {
+    btn.style.opacity   = "0";
+    btn.style.transform = "translateY(8px)";
+  }
   ctaObserver.observe(ctaSection);
 }

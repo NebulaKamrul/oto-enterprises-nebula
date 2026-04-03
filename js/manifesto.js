@@ -2,10 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const el = document.querySelector('.manifesto-text');
   if (!el) return;
 
-  const line1 = "Your aircraft deserves more than maintenance.";
-  const speed = 38;
+  const line1wrap = el.querySelector('.manifesto-line1-wrap');
+  const line2el   = el.querySelector('.manifesto-line2');
+  if (!line1wrap || !line2el) return;
 
-  el.innerHTML = '';
+  const prefix = "Your aircraft deserves more than just ";
+  const dim    = "maintenance.";
+  const line1  = prefix + dim;
+  const speed  = 38;
+
+  // Pre-reserve full height with transparent placeholder
+  line1wrap.innerHTML = '<span style="color:transparent">' + line1 + '</span>';
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -22,23 +29,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function typeLine1() {
       if (i <= line1.length) {
-        el.innerHTML = line1.slice(0, i) +
-          '<span class="manifesto-cursor">|</span>';
+        const visibleFull = line1.slice(0, i);
+        const hidden      = line1.slice(i);
+
+        // Split visible portion: prefix in white, dim word in gray (once reached)
+        let visibleHTML;
+        if (i <= prefix.length) {
+          visibleHTML = '<span style="color:white">' + visibleFull + '</span>';
+        } else {
+          const visiblePrefix = prefix;
+          const visibleDim    = visibleFull.slice(prefix.length);
+          visibleHTML =
+            '<span style="color:white">'                    + visiblePrefix + '</span>' +
+            '<span style="color:rgba(255,255,255,0.38)">'  + visibleDim    + '</span>';
+        }
+
+        line1wrap.innerHTML =
+          visibleHTML +
+          '<span class="manifesto-cursor">|</span>' +
+          '<span style="color:transparent">' + hidden + '</span>';
         i++;
         setTimeout(typeLine1, speed);
       } else {
-        // Remove cursor, then fade up line 2
-        el.innerHTML = line1;
+        // Done — settle with final colors, no cursor
+        line1wrap.innerHTML =
+          '<span style="color:white">'                   + prefix + '</span>' +
+          '<span style="color:rgba(255,255,255,0.38)">'  + dim    + '</span>';
         setTimeout(showLine2, 350);
       }
     }
 
     function showLine2() {
-      el.innerHTML =
-        line1 +
-        '<br><span class="manifesto-line2">It deserves a <strong><em>standard.</em></strong></span>';
-      // Trigger reflow so transition fires
-      const line2el = el.querySelector('.manifesto-line2');
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           line2el.classList.add('visible');

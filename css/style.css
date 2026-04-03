@@ -30,19 +30,19 @@ section {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 500;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.85;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  color: #3a3a3a;
+  color: #2e2e2e;
 }
 
 
@@ -113,13 +113,24 @@ p {
 }
 
 .why-oto p {
-  font-style: italic;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 2;
+  color: #222;
+  max-width: 860px;
 }
 
-/* --- Before & After Placeholder --- */
+/* --- Before & After --- */
 .before-after {
   background-color: #fafafa;
-  font-style: italic;
+}
+
+.before-after-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: #444;
+  margin-top: 1rem;
+  font-style: normal;
 }
 
 /* --- Testimonials --- */
@@ -296,9 +307,21 @@ p {
 .service-region {
   background-color: #fcfcfc;
   text-align: center;
-  font-style: italic;
-  font-size: 1rem;
+  font-style: normal;
+  padding: 5rem 8vw;
+}
+
+.service-region h2 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.service-region p {
+  font-size: 1.25rem;
   color: #2a2a2a;
+  line-height: 2.1;
+  max-width: 700px;
 }
 
 
@@ -323,7 +346,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 20%;
   z-index: 1;
 }
 
@@ -431,11 +454,11 @@ p {
 
 .stat-label {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-top: 0.6rem;
+  color: rgba(255,255,255,0.62);
+  margin-top: 0.7rem;
   text-align: center;
   max-width: none;
 }
@@ -443,14 +466,14 @@ p {
 
 /* ===== MANIFESTO ===== */
 .manifesto-section {
-  background-color: #0a0a0a;
-  padding: 7rem 8vw;
+  background-color: #111;
+  padding: 5rem 8vw;
   text-align: center;
 }
 
 .manifesto-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3.8rem);
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
   font-weight: 400;
   color: white;
   line-height: 1.55;
@@ -465,8 +488,18 @@ p {
   font-style: italic;
 }
 
+.manifesto-dim {
+  color: rgba(255, 255, 255, 0.38);
+}
+
 .manifesto-text strong em {
   font-weight: 700;
+}
+
+/* Line 1 wrapper — invisible by default; JS replaces content char by char */
+.manifesto-line1-wrap {
+  display: inline;
+  color: transparent; /* placeholder text holds space; JS types visible chars */
 }
 
 .manifesto-line2 {
@@ -497,53 +530,167 @@ p {
 
 /* ===== HOW IT WORKS ===== */
 .process-section {
-  background-color: #fff;
+  background-color: #f9f9f7;
   padding: 5rem 8vw;
 }
 
+.process-eyebrow {
+  display: block;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
 .process-section h2 {
-  margin-bottom: 3.5rem;
+  font-size: 3.6rem;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
 }
 
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-  max-width: 1200px;
+  gap: 0;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .process-step {
   text-align: left;
-  padding-top: 1.5rem;
-  border-top: 2px solid #111;
+  padding: 0 3.5rem 0 0;
+  position: relative;
+  cursor: default;
 }
 
+.process-step:last-child {
+  padding-right: 0;
+}
+
+/* Top line — full-width grey rail per step */
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #cecece;
+}
+
+/* Blue fill — sweeps left-to-right on hover */
+.process-step::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #5991e7;
+  transition: width 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.process-step:hover::after {
+  width: 100%;
+}
+
+/* Number — same typographic voice as the eyebrow label */
 .step-number {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: #ddd;
   display: block;
-  line-height: 1;
-  margin-bottom: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #999;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  transition: color 0.35s ease;
+}
+
+.process-step:hover .step-number {
+  color: #5991e7;
 }
 
 .process-step h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
   color: #111;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.process-step:hover h3 {
+  transform: translateY(-2px);
 }
 
 .process-step p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.7;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.85;
   text-align: left;
   max-width: none;
   margin: 0;
+  padding-bottom: 2rem;
+}
+
+/* ===== HOW IT WORKS — RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process-step {
+    padding: 0 2.5rem 0 0;
+  }
+
+  .process-step:nth-child(2n) {
+    padding-right: 0;
+  }
+
+  .process-step h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .process-section {
+    padding: 4rem 6vw;
+  }
+
+  .process-section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .process-step,
+  .process-step:nth-child(2n) {
+    padding: 0 0 0 0;
+  }
+
+  .process-step h3 {
+    font-size: 1.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .process-step p {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-bottom: 0.5rem;
+  }
 }
 
 
@@ -551,40 +698,131 @@ p {
 .aircraft-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  max-width: 1200px;
+  /* Hairline dividers via background bleed — no gap spacing */
+  gap: 1px;
+  max-width: 1300px;
   margin: 2.5rem auto 0;
+  background: #252525; /* shows through 1px gaps as divider lines */
+  border: 1px solid #252525;
 }
 
 .aircraft-card {
-  background: #111;
-  padding: 2.5rem 2rem;
+  /* Subtle directional gradient — not flat black */
+  background: linear-gradient(160deg, #141414 0%, #0c0c0c 100%);
+  padding: 3rem 2.6rem 2.8rem;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  transition: transform 0.3s ease;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  position: relative;
+  overflow: hidden;
+  /* Very faint top-edge highlight — simulates a light source above */
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
+              background 0.35s ease;
   cursor: default;
+}
+
+/* Blue sweep on hover — fades out at right edge for restraint */
+.aircraft-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, #5991e7 0%, rgba(89,145,231,0.15) 100%);
+  transition: width 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.aircraft-card:hover::after {
+  width: 100%;
 }
 
 .aircraft-card:hover {
   transform: translateY(-5px);
+  background: linear-gradient(160deg, #181818 0%, #0f0f0f 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06),
+              0 24px 48px rgba(0,0,0,0.45);
+}
+
+/* Silhouette — bottom-right, blurred slightly to read as shadow not icon */
+.aircraft-bg-icon {
+  position: absolute;
+  bottom: -6%;
+  right: -4%;
+  width: 58%;
+  height: auto;
+  opacity: 0.06;
+  pointer-events: none;
+  filter: blur(0.6px);
+  /* Landing: slow decelerate — the plane glides back into position */
+  transition: transform 0.9s cubic-bezier(0, 0, 0.2, 1),
+              opacity 0.7s ease,
+              filter 0.4s ease;
+}
+
+.aircraft-card:hover .aircraft-bg-icon {
+  /* Blast off: fast accelerating exit upward, fades as it exits */
+  transform: translateY(-170px) scale(0.9);
+  opacity: 0;
+  filter: blur(1.5px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 1, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
+              filter 0.3s ease;
+}
+
+/* Blue accent — short horizontal rule, more architectural than a dot */
+.aircraft-card .accent-dot {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  border-radius: 0;
+  background: #5991e7;
+  margin-bottom: 1.1rem;
+  position: relative;
+  z-index: 1;
+  transition: width 0.35s ease;
+}
+
+.aircraft-card:hover .accent-dot {
+  width: 34px;
 }
 
 .aircraft-type {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 500;
-  color: white;
+  font-size: 1.8rem;
+  /* 400 weight reads more refined than 500 at this size */
+  font-weight: 400;
+  color: rgba(255,255,255,0.90);
   display: block;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.aircraft-card:hover .aircraft-type {
+  color: rgba(255,255,255,1);
 }
 
 .aircraft-examples {
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 1.8px;
+  font-size: 0.65rem;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.28);
   display: block;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.aircraft-card:hover .aircraft-examples {
+  color: rgba(255,255,255,0.42);
 }
 
 
@@ -620,7 +858,7 @@ p {
 
 .pricing-card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 500;
   color: #111;
   margin: 0;
@@ -631,17 +869,17 @@ p {
 }
 
 .pricing-card p {
-  font-size: 0.95rem;
-  color: #888;
+  font-size: 1rem;
+  color: #555;
   text-align: left;
   max-width: none;
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 0;
   flex: 1;
 }
 
 .pricing-card.featured p {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
 }
 
 .featured-label {
@@ -702,72 +940,95 @@ p {
 
 @media (max-width: 768px) {
   section {
-    padding: 2.5rem 5vw;
+    padding: 4rem 6vw;
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
   }
 
   .why-oto p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-  }
-
-  .testimonial-text {
-    font-size: 1.3rem;
-  }
-
-  .testimonial-author {
-    font-size: 1rem;
-  }
-
-  .testimonial-card {
-    min-height: auto;
+    font-size: 1.2rem;
+    line-height: 1.85;
   }
 
   .cta-text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .cta-text p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+  }
+
+  /* Stats — 2 col, divider between rows */
+  .stats-section {
+    padding: 3.5rem 6vw;
   }
 
   .stat-item {
-    flex: 1 1 40%;
+    flex: 1 1 45%;
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem 1rem;
   }
 
   .stat-number {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
   }
 
-  .process-steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  .stat-label {
+    font-size: 0.72rem;
   }
 
+  /* Manifesto */
+  .manifesto-section {
+    padding: 5rem 6vw;
+  }
+
+  /* Aircraft — 2 col on tablet, 1 col on phone */
   .aircraft-grid {
     grid-template-columns: 1fr 1fr;
   }
 
+  .aircraft-type {
+    font-size: 1.55rem;
+  }
+
+  /* Pricing — single col on mobile */
   .pricing-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.8rem;
   }
 
   .comparison-row {
     flex-direction: column;
   }
+
+  /* Service region */
+  .service-region p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+  }
 }
 
 @media (max-width: 480px) {
-  .process-steps,
+  section {
+    padding: 3.5rem 5vw;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
   .aircraft-grid,
   .pricing-cards {
     grid-template-columns: 1fr;
@@ -775,10 +1036,15 @@ p {
 
   .stat-item {
     flex: 1 1 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
 
   .manifesto-text {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
+  }
+
+  .stats-section {
+    padding: 3rem 5vw;
   }
 }
 
