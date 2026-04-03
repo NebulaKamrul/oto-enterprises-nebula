@@ -1,8 +1,375 @@
-<!-- redirect -->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/services.html" />
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - OTO Enterprises</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="OTO Enterprises" />
+  <meta property="og:url"         content="https://otoenterprise.com/services" />
+  <meta property="og:title"       content="OTO Enterprises, where every detail matters." />
+  <meta property="og:description" content="From quick interior refreshes to full exterior polishes — every OTO package is tailored to your aircraft. Light jets to heavy iron." />
+  <meta property="og:image"       content="https://otoenterprise.com/photos/og-preview.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="OTO Enterprises, where every detail matters." />
+  <meta name="twitter:description" content="From quick interior refreshes to full exterior polishes — every OTO package is tailored to your aircraft. Light jets to heavy iron." />
+  <meta name="twitter:image"       content="https://otoenterprise.com/photos/og-preview.jpg" />
+
+  <link rel="stylesheet" href="/css/contact.css" />
+  <link rel="stylesheet" href="/css/services.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-m..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <header class="video-header">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="/videos/service.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-content">
+        <div class="logo">
+          <a href="/home/"><img src="/photos/otologowhite.png" alt="Logo" class="logo-img" /></a>
+        </div>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/services/" class="active">Services</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a href="/contact/" class="quote-btn">Request a Quote</a>
+          </div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="hero-text">
+      <div class="overlay-content">
+        <div class="typewriter-lines">
+          <h1 class="typewriter-line1 typing" data-text="You Set the Pace, We Detail the Space."></h1>
+          <p class="typewriter-line2" data-text="We don't follow industry standards. We redefine them."></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="content fade-in-on-scroll services-section">
+    <h2 class="section-title">Aircraft Interior Detailing</h2>
+    <p class="intro-text">
+      Our mobile team brings luxury-grade interior care to your aircraft, wherever you are.
+      From jets to helicopters, every detail is handled with precision and care.
+    </p>
+    <div class="slider-wrapper">
+      <button class="slider-arrow left" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="slider" id="serviceSlider">
+        <div class="slide active">
+          <div class="luxury-card">
+            <div class="luxury-text">
+              <h3>Full Interior Cleaning</h3>
+              <p>A thorough cabin reset. <br> Every surface wiped, every corner cleared.</p>
+              <p class="full-text">
+                ✓ Full cabin wipe-down<br>
+                ✓ Vacuuming of seat crevices and flooring<br>
+                ✓ Tray tables, windows, and non-sensitive instrument panels<br>
+                ✓ Crew area sanitation and trash removal<br>
+              </p>
+              <a href="#" class="read-more-link">Read more</a>
+            </div>
+            <div class="luxury-image hover-overlay">
+              <img src="/photos/cabin.jpg" alt="Cabin cleaning">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <p class="price-range">
+                    Single Engine / Light Twin: $175 – $250<br>
+                    Turboprop / Light Jet: $250 – $375<br>
+                    Midsize Jet: $400 – $550<br>
+                    Heavy Jet: $600 – $800
+                  </p>
+                  <a href="/contact/" class="get-service-btn">Book Full Cleaning</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="luxury-card">
+            <div class="luxury-text">
+              <h3>Sanitization Service</h3>
+              <p>Aviation-approved disinfection to keep your cabin clean and crew protected.</p>
+              <p class="full-text">
+                ✓ Disinfection fogging throughout the cabin<br>
+                ✓ High-touch area sterilization<br>
+                ✓ Aviation-safe, non-corrosive disinfectants only<br>
+              </p>
+              <a href="#" class="read-more-link">Read more</a>
+            </div>
+            <div class="luxury-image hover-overlay">
+              <img src="/photos/cabin.jpg" alt="Sanitization service">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <p class="price-range">
+                    All Aircraft Types: $100 – $200<br>
+                    Add-on to any cleaning: +$75
+                  </p>
+                  <a href="/contact/" class="get-service-btn">Get This Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="luxury-card">
+            <div class="luxury-text">
+              <h3>Leather & Vinyl Conditioning</h3>
+              <p>Preserve and restore every surface: leather, vinyl, and plastic panels.</p>
+              <p class="full-text">
+                ✓ Deep clean of all seats and cabin panels<br>
+                ✓ Conditioning treatment for leather and vinyl<br>
+                ✓ Color-safe products, anti-crack protection<br>
+              </p>
+              <a href="#" class="read-more-link">Read more</a>
+            </div>
+            <div class="luxury-image hover-overlay">
+              <img src="/photos/leather.jpg" alt="Leather conditioning">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <p class="price-range">
+                    Single Engine / Light Jet: $75 – $125<br>
+                    Midsize / Heavy Jet: $150 – $300
+                  </p>
+                  <a href="/contact/" class="get-service-btn">Get This Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="luxury-card">
+            <div class="luxury-text">
+              <h3>Odor Removal</h3>
+              <p>Eliminate smoke, mildew, fuel, and food odors at the source.</p>
+              <p class="full-text">
+                ✓ Odor neutralizer application throughout cabin<br>
+                ✓ Cabin circulation treatment<br>
+                ✓ Optional ozone treatment for severe cases<br>
+              </p>
+              <a href="#" class="read-more-link">Read more</a>
+            </div>
+            <div class="luxury-image hover-overlay">
+              <img src="/photos/odor.jpg" alt="Odor removal">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <p class="price-range">
+                    All Aircraft Types: $150 – $300<br>
+                    Severe cases (smoke / mildew): up to $450
+                  </p>
+                  <a href="/contact/" class="get-service-btn">Get This Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="luxury-card">
+            <div class="luxury-text">
+              <h3>Steam Cleaning</h3>
+              <p>Deep penetrating steam for seats, carpets, and hard-to-reach floor crevices.</p>
+              <p class="full-text">
+                ✓ Seats, carpets, and floor crevices<br>
+                ✓ Lavatory (if applicable)<br>
+                ✓ Chemical-free deep clean option<br>
+              </p>
+              <a href="#" class="read-more-link">Read more</a>
+            </div>
+            <div class="luxury-image hover-overlay">
+              <img src="/photos/upholstery.jpg" alt="Steam cleaning">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <p class="price-range">
+                    Spot Steam (small areas): $75 – $125<br>
+                    Full Cabin Steam: $150 – $350
+                  </p>
+                  <a href="/contact/" class="get-service-btn">Get This Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="packages-section fade-in-on-scroll">
+    <h2 class="section-title">Optional Packages</h2>
+    <p class="intro-text">Tailored plans for recurring clients, fleets, and urgent requests.</p>
+    <div class="packages-grid">
+      <div class="package-card">
+        <h3>Monthly Maintenance Plan</h3>
+        <p>Custom pricing based on frequency. <br>2 cleans/month = <strong>10% off</strong>.</p>
+      </div>
+      <div class="package-card">
+        <h3>Fleet Rates</h3>
+        <p>Operating 2 or more aircraft? <br>Receive a <strong>15–20% discount</strong> on all services.</p>
+      </div>
+      <div class="package-card">
+        <h3>On-Call Service</h3>
+        <p>Need us within 24 hours? We'll be there. <br> <strong>+$100 surcharge</strong> applies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="comparison-section fade-in-on-scroll">
+    <h2 class="comparison-title">See the Difference OTO Makes in Every Cabin</h2>
+    <p class="comparison-tagline">With OTO on deck, your aircraft's aura will always stay in check.</p>
+    <div class="comparison-row">
+      <div class="comparison-wrapper">
+        <img src="/photos/cabinafter.png" alt="Clean cabin" class="comparison-img after-img" />
+        <img src="/photos/cabinbefore.png" alt="Dirty cabin" class="comparison-img before-img" />
+        <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
+      </div>
+      <div class="comparison-wrapper">
+        <img src="/photos/cockpitafter.png" alt="Clean cockpit" class="comparison-img after-img" />
+        <img src="/photos/cockpitbefore.png" alt="Dirty cockpit" class="comparison-img before-img" />
+        <div class="slider-handle"><span class="chevron">&lsaquo;&rsaquo;</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section fade-in-on-scroll">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <input type="checkbox" id="q1">
+        <label for="q1" class="faq-question">What services does OTO offer?</label>
+        <div class="faq-answer">OTO offers full interior cleaning, sanitization, leather and vinyl conditioning, odor removal, and steam cleaning: plus optional packages for monthly maintenance, fleet discounts, and on-call service. All optimized for jets, props, and helicopters.</div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q2">
+        <label for="q2" class="faq-question">Where is OTO located?</label>
+        <div class="faq-answer">We're proudly based in Ontario, Canada, offering mobile detailing services across the GTA and surrounding airports.</div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q3">
+        <label for="q3" class="faq-question">How long does a full cabin clean take?</label>
+        <div class="faq-answer">On average, 2–4 hours depending on the aircraft size and the level of detailing required.</div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q4">
+        <label for="q4" class="faq-question">Are your products aviation-safe?</label>
+        <div class="faq-answer">Yes. We exclusively use aviation-safe, non-corrosive, and eco-friendly products compliant with industry standards.</div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q5">
+        <label for="q5" class="faq-question">How do I book a service?</label>
+        <div class="faq-answer">Simply head to our <a href="/contact/">Contact</a> page and send us a request. Our team will follow up within 24 hours.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-video fade-in-on-scroll">
+    <video autoplay muted loop playsinline class="background-video-cta">
+      <source src="/videos/ac.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay-cta"></div>
+    <div class="cta-text">
+      <h2 class="cta-title" data-text="Luxury Isn't Optional, It's OTO.">Luxury Isn't Optional, It's OTO.</h2>
+      <p class="cta-sub">From $249. Mobile service. Trusted by pilots across Ontario.</p>
+      <a href="/contact/" class="btn">Request a Quote</a>
+    </div>
+  </section>
+
+  <footer class="contact-footer fade-in-on-scroll">
+    <div class="footer-content">
+      <h2 class="footer-title">OTO Enterprises Inc.</h2>
+      <div class="footer-contact">
+        <p><a href="mailto:info@otoenterprise.com">info@otoenterprise.com</a></p>
+        <p>(905) 718-4005</p>
+      </div>
+      <div class="footer-address">
+        <p><br>Oshawa Executive Airport [CYOO]</p>
+        <p>Aviator Ln, Oshawa, ON</p>
+        <p>L1J 8P5</p>
+      </div>
+      <div class="footer-logo-container">
+        <img src="/photos/otologowhite.png" alt="OTO Logo" class="footer-logo">
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/scrollfade.js"></script>
+  <script src="/js/typewritercontact.js"></script>
+  <script src="/js/navbar.js"></script>
+  <script src="/js/cta.js"></script>
+
+  <script>
+    document.querySelectorAll('.read-more-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const content = this.previousElementSibling;
+        content.style.display = 'block';
+        this.style.display = 'none';
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const slider = document.getElementById("serviceSlider");
+    const slides = slider.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    function updateSlidePosition() {
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    document.querySelector(".slider-arrow.right").addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlidePosition();
+    });
+
+    document.querySelector(".slider-arrow.left").addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlidePosition();
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.comparison-wrapper').forEach(wrapper => {
+      const afterImg = wrapper.querySelector('.after-img');
+      const handle = wrapper.querySelector('.slider-handle');
+
+      wrapper.addEventListener('mousemove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
+        afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+        handle.style.left = `${percent}%`;
+      });
+    });
+  </script>
+</body>
 </html>
