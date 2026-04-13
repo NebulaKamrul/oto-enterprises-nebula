@@ -1,4 +1,5 @@
-# OTO Enterprises – Where Every Detail Matters
+# OTO Enterprises,
+# Where Every Detail Matters
 
 Welcome to the official codebase for **OTO Enterprises**, a premium aviation service brand offering luxury aircraft detailing, sanitization, odor removal, and interior restoration across Ontario, Canada.
 
